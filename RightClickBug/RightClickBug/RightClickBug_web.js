@@ -101,11 +101,7 @@ RightClickBug.ExportXls = function (exportData) {
 }
 
 function CreateBody() {
-    // add file input button
-    window.document.body.appendChild(inputDiv)
-    inputDiv.appendChild(fileInput)
-    inputDiv.appendChild(uploadButton)
-    window.document.body.appendChild(readyDiv)
+
     //add quantify button
     window.document.body.appendChild(qDiv);
     qDiv.appendChild(qButton)
