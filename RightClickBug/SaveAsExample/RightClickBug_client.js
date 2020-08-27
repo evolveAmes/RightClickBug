@@ -1,9 +1,9 @@
-﻿if (typeof SaveAsExample == 'undefined') {
-    SaveAsExample = {};
+﻿if (typeof RightClickBug == 'undefined') {
+    RightClickBug = {};
 }
 
 // MAIN CODE
-SaveAsExample.GetArray = function () {
+RightClickBug.GetArray = function () {
 
     // array creation for end data
     var array = JSON.parse([{

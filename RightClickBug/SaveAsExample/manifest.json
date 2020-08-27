@@ -1,10 +1,10 @@
 ﻿{
-  "PluginName": "Example",
+  "PluginName": "RightClickBug",
   "PluginDescription": "Bug example.",
   "PluginType": "Panel",
   "Scripts": [
-    "PLUGINLOCATION/SaveAsBugExample_client.js",
-    "PLUGINLOCATION/SaveAsBugExample_web.js"
+    "PLUGINLOCATION/RightClickBug_client.js",
+    "PLUGINLOCATION/RightClickBug_web.js"
 
   ],
   "Panel": "PLUGINLOCATION/panel.html",

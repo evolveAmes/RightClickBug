@@ -1,5 +1,5 @@
-﻿if (typeof SaveAsExample == "undefined") {
-    SaveAsExample = {};
+﻿if (typeof RightClickBug == "undefined") {
+    RightClickBug = {};
 }
 
 // create loading div
@@ -28,7 +28,7 @@ dlDiv.id = "download"
 var aLink = document.createElement("a");
 
 // CSV EXPORT METHOD
-SaveAsExample.ExportCsv = function (array) {
+RightClickBug.ExportCsv = function (array) {
     // change array back to csv format  
     var csv = Papa.unparse(array)
 
@@ -66,7 +66,7 @@ function obj2Arr(x) {
 }
 
 // XLS EXPORT METHOD
-SaveAsExample.ExportXls = function (exportData) {
+RightClickBug.ExportXls = function (exportData) {
 
     var fileName = "export.xls"
 
@@ -117,7 +117,7 @@ function CreateBody() {
 
 
 // INTERFACE CREATION METHOD
-SaveAsExample.CreateInterface = function () {
+RightClickBug.CreateInterface = function () {
     // create body
     CreateBody()
 }
@@ -125,10 +125,10 @@ SaveAsExample.CreateInterface = function () {
 
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-SaveAsExample.ShowBug = async function () {
+RightClickBug.ShowBug = async function () {
     await FormItInterface.CallMethod("SaveAsExample.GetArray", function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
-        SaveAsExample.ExportXls(result)
+        RightClickBug.ExportXls(result)
         loadDiv.className = "hide"
     })
 }
@@ -139,7 +139,7 @@ SaveAsExample.ShowBug = async function () {
 // run CollectData function on button click
 qButton.onclick = function () {
     loadDiv.className = "loading"
-    SaveAsExample.ShowBug();
+    RightClickBug.ShowBug();
 };
 
 // test url
