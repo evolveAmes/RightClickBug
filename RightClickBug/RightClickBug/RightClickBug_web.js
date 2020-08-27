@@ -60,7 +60,6 @@ function CreateBody() {
     window.document.body.appendChild(qDiv);
     qDiv.appendChild(qButton)
     // download div
-    window.document.body.appendChild(dlDiv)
 }
 
 
