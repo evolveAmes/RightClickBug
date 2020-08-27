@@ -1,13 +1,6 @@
-﻿
-var qDiv;
-var qButton;
-if (typeof RightClickBug == "undefined") {
+﻿if (typeof RightClickBug == "undefined") {
     RightClickBug = {};
-    qDiv = document.createElement("div");
-    qButton = document.createElement("input");
 }
-
-
 
 function obj2Arr(x) {
     var row = [];
@@ -52,44 +45,35 @@ RightClickBug.ExportXls = function (exportData) {
     XLSX.writeFile(wb, fileName);
 };
 
-function CreateBody() {
-    //add export button
-    document.body.appendChild(qDiv);
-    qDiv.appendChild(qButton);
-    // download div
-}
-
-
 // INTERFACE CREATION METHOD
 RightClickBug.CreateInterface = function () {
 
     // create export div
+    var qDiv = document.createElement("div");
     qDiv.id = "export";
 
     // create export button
+    var qButton = document.createElement("input");
     qButton.setAttribute("type", "button");
     qButton.value = "Export";
 
-    // create body
-    CreateBody();
+    var doSend = true;
+    // run CollectData function on button click
+    qButton.onclick = function () {
+        RightClickBug.ShowBug(doSend);
+    };
+
+    window.document.body.appendChild(qDiv);
+    qDiv.appendChild(qButton);
 };
-
-
-var doSend = true;
-// run CollectData function on button click
-qButton.onclick = function () {
-    RightClickBug.ShowBug(doSend);
-};
-
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
 RightClickBug.ShowBug = function (sendBool) {
-    FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
-        FormItInterface.ConsoleLog("Result: " + result);
+    window.FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
+        window.FormItInterface.ConsoleLog("Result: " + result);
         RightClickBug.ExportXls(result);
     });
 };
-
 
 // test url
 // https://evolveames.github.io/RightClickBug/RightClickBug
