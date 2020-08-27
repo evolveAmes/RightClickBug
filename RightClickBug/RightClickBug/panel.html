@@ -13,7 +13,9 @@
 
     <script type="text/javascript">
 
-        FormItInterface.Initialize(function () {});
+        FormItInterface.Initialize(function () {
+            RightClickBug.CreateInterface();
+        });
 
     </script>
 </head>
@@ -25,8 +27,6 @@
 <p>Save as dialog won't show unless a right-click has been fired within the panel.</p>
 <br>
 <!-- NEW DIVS MADE UNDER HERE -->
-<div>
-    <button name="qButton" onclick="RightClickBug.RightClickBug()">Export</button>
-</div>
+
 </body>
 </html>
