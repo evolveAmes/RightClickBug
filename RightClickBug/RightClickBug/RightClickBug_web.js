@@ -2,14 +2,6 @@
     RightClickBug = {};
 }
 
-// create loading div
-var loadDiv = document.createElement("div")
-loadDiv.className = "hide"
-
-// loading gif in loading div
-var loadGif = document.createElement("img")
-loadGif.src = "helpers/Images/loading.gif"
-
 // create export div
 var qDiv = document.createElement("div")
 qDiv.id = "export"
@@ -25,36 +17,6 @@ dlDiv.id = "download"
 
 // link for download
 var aLink = document.createElement("a");
-
-// CSV EXPORT METHOD
-RightClickBug.ExportCsv = function (array) {
-    // change array back to csv format  
-    var csv = Papa.unparse(array)
-
-    // create download link div
-    var dlDiv = document.createElement("div")
-    dlDiv.id = "download"
-
-    // link for download
-    var aLink = document.createElement("a");
-
-    // create full data for export - includes CSV
-    var urlData = "data:text/csv;charset=UTF-8," + encodeURIComponent(csv)
-
-    // create link element
-    aLink.href = urlData;
-    aLink.target = "_blank"
-    aLink.download = "export.csv";
-    aLink.innerHTML = "Download CSV"
-
-    // create manual link
-    dlDiv.appendChild(aLink)
-
-    // wait before clicking link 
-    setTimeout(aLink.click(), 300);
-
-};
-
 
 function obj2Arr(x) {
     var row = []
@@ -101,12 +63,10 @@ RightClickBug.ExportXls = function (exportData) {
 
 function CreateBody() {
 
-    //add quantify button
+    //add export button
     window.document.body.appendChild(qDiv);
     qDiv.appendChild(qButton)
-    // download and loading divs
-    window.document.body.appendChild(loadDiv)
-    loadDiv.appendChild(loadGif)
+    // download div
     window.document.body.appendChild(dlDiv)
 }
 

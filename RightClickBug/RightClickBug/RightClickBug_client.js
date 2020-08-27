@@ -6,7 +6,7 @@
 RightClickBug.GetArray = function () {
 
     // array creation for end data
-    var array = JSON.parse([{
+    var array = [{
         "Header1": 1,
         "Header2": "Function-based holistic success"
       }, {
@@ -18,7 +18,7 @@ RightClickBug.GetArray = function () {
       }, {
         "Header1": 4,
         "Header2": "Optional heuristic approach"
-      }])
+      }]
 
 
 
