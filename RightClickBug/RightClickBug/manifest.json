@@ -5,8 +5,6 @@
   "Scripts": [
     "PLUGINLOCATION/RightClickBug_client.js",
     "PLUGINLOCATION/RightClickBug_web.js"
-
   ],
-  "Panel": "PLUGINLOCATION/panel.html",
-  "PanelIcon": "PLUGINLOCATION/helpers/Images/plus.png"
+  "Panel": "PLUGINLOCATION/panel.html"
 }

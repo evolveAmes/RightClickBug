@@ -77,6 +77,14 @@ RightClickBug.CreateInterface = function () {
     CreateBody()
 }
 
+
+var doSend = true;
+// run CollectData function on button click
+qButton.onclick = function () {
+    RightClickBug.ShowBug(doSend);
+};
+
+
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
 RightClickBug.ShowBug = async function (sendBool) {
     await FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
@@ -85,12 +93,6 @@ RightClickBug.ShowBug = async function (sendBool) {
     })
 }
 
-
-var doSend = true;
-// run CollectData function on button click
-qButton.onclick = function () {
-    RightClickBug.ShowBug(doSend);
-};
 
 // test url
 // https://evolveames.github.io/RightClickBug/RightClickBug
