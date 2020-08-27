@@ -84,7 +84,6 @@ RightClickBug.ShowBug = async function () {
     await FormItInterface.CallMethod("RightClickBug.GetArray", function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
-        loadDiv.className = "hide"
     })
 }
 
@@ -93,7 +92,6 @@ RightClickBug.ShowBug = async function () {
 
 // run CollectData function on button click
 qButton.onclick = function () {
-    loadDiv.className = "loading"
     RightClickBug.ShowBug();
 };
 
