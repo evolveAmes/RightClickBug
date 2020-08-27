@@ -87,7 +87,7 @@ qButton.onclick = function () {
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
 RightClickBug.ShowBug = function (sendBool) {
-    await FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
+    FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
     })
