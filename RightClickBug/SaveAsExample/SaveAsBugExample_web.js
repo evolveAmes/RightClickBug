@@ -2,27 +2,6 @@
     SaveAsExample = {};
 }
 
-// for parsed LGQ catalog
-var parsedCsvCatalog
-
-
-// create input div, file input (hidden), and label
-var inputDiv = document.createElement("div")
-var fileInput = document.createElement("input")
-fileInput.type = "file"
-fileInput.name = "file"
-fileInput.id = "file"
-fileInput.className = "inputfile"
-
-var uploadButton = document.createElement("label")
-uploadButton.htmlFor = "file"
-uploadButton.innerHTML = "Choose .CSV Catalog..."
-
-// div for displaying if file is ready
-var readyDiv = document.createElement("div")
-readyDiv.className = "ready"
-readyDiv.innerHTML = "Waiting for .CSV file..."
-
 // create loading div
 var loadDiv = document.createElement("div")
 loadDiv.className = "hide"
@@ -136,69 +115,17 @@ function CreateBody() {
     window.document.body.appendChild(dlDiv)
 }
 
-function parseCSV(file, delimiter, callback) {
-    // convert csv data to array
-    Papa.parse(file, {
-        header: true,
-        download: true,
-        dynamicTyping: true,
-        complete: function (results) {
-            //console.log("Finished:", results);
-            callback(results.data);
-        }
-    });
-};
 
 // INTERFACE CREATION METHOD
 SaveAsExample.CreateInterface = function () {
     // create body
     CreateBody()
-
-    // event listener for when file is chosen
-    var input = document.getElementById("file")
-    var label = input.nextElementSibling;
-    var labelVal = label.innerHTML;
-
-    input.addEventListener('change', function (e) {
-        // update label depending on file chosen
-        var fileName = '';
-        fileName = e.target.value.split('\\').pop();
-        //file was picked...
-        if (fileName) {
-            // update button text
-            label.innerHTML = fileName;
-            // does it end in .csv?
-            if (fileName.endsWith(".csv")) {
-                // show quantify button now that csv is loaded
-                qButton.disabled = false;
-                // read csv
-                var files = this.files;
-                for (var i = 0; i < files.length; i++) {
-                    parseCSV(files[i], ',', function (result) {
-                        parsedCsvCatalog = result
-                    
-                    });
-                }
-                readyDiv.textContent = "CSV loaded!"
-            }
-            // file loaded, but not csv
-            else {
-                readyDiv.textContent = "Must be a CSV file!"
-                qButton.disabled = true;
-            }
-        }
-        // no file loaded
-        else {
-            label.innerHTML = labelVal;
-            qButton.disabled = true;
-        }
-    })
 }
 
 
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-SaveAsExample.findMatchingGroupsAndQuantify = async function (catalog) {
+SaveAsExample.ShowBug = async function (catalog) {
     await FormItInterface.CallMethod("SaveAsExample.GetArray", catalog, function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         SaveAsExample.ExportXls(result)
@@ -212,7 +139,7 @@ SaveAsExample.findMatchingGroupsAndQuantify = async function (catalog) {
 // run CollectData function on button click
 qButton.onclick = function () {
     loadDiv.className = "loading"
-    SaveAsExample.findMatchingGroupsAndQuantify(parsedCsvCatalog);
+    SaveAsExample.ShowBug(parsedCsvCatalog);
 };
 
 // test url
