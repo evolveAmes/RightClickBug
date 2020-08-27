@@ -47,7 +47,7 @@ RightClickBug.ExportXls = function (exportData) {
 
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-function RightClickBug(){
+function RightClickBug() {
     FormItInterface.CallMethod("RightClickBug.GetArray", function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
