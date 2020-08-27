@@ -7,7 +7,7 @@ RightClickBug.GetArray = function (doSend) {
 
   // array creation for end data
   var array;
-  if(doSend){
+  if(doSend) {
     array = [{
       "Header1": 1,
       "Header2": "Function-based holistic success"

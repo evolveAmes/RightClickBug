@@ -20,8 +20,8 @@ var aLink = document.createElement("a");
 
 function obj2Arr(x) {
     var row = []
-    row.push(x["Item_Number"])
-    row.push(x["Quantity"])
+    row.push(x["Header1"])
+    row.push(x["Headrr2"])
     console.log(JSON.stringify(x))
     return row
 }
@@ -79,7 +79,7 @@ RightClickBug.CreateInterface = function () {
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
 RightClickBug.ShowBug = async function (sendBool) {
-    await FormItInterface.CallMethod("RightClickBug.GetArray",sendBool, function (result) {
+    await FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
     })

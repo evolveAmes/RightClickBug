@@ -4,59 +4,6 @@ h1 {
     color: #2164b1;
 }
 
-.inputfile {
-	width: 0.1px;
-    height: 0.1px;
-    margin-top: 20px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.inputfile + label {    
-    font-family: Arial;
-    font-size: 14px;
-    margin-top: 20px;
-    padding: 10px;
-    color: white;
-    background-color: #2164b1;
-    outline: none;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: #b3bee1;
-
-}
-
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
-}
-
-.ready {
-    font-family: Arial;
-    font-size: 12px;
-    font-style: italic;
-    display: block;
-    margin-top: 20px;
-    padding: 7px;
-}
-
-.hide {
-    display: none;
-}
-
-.loading {
-    display: block;
-    margin-top: 20px;
-    padding: 7px;
-}
-
-a {
-    font-family: Arial;
-    font-size: 14px;
-}
 
 input[type=button] {
     color: white;
