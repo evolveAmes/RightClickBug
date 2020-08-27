@@ -2,22 +2,6 @@
     RightClickBug = {};
 }
 
-// create export div
-var qDiv = document.createElement("div")
-qDiv.id = "export"
-
-// create export button
-var qButton = document.createElement("input");
-qButton.setAttribute("type", "button")
-qButton.value = "Export";
-
-// create download link div
-var dlDiv = document.createElement("div")
-dlDiv.id = "download"
-
-// link for download
-var aLink = document.createElement("a");
-
 function obj2Arr(x) {
     var row = []
     row.push(x["Header1"])
@@ -61,33 +45,10 @@ RightClickBug.ExportXls = function (exportData) {
     XLSX.writeFile(wb, fileName);
 }
 
-function CreateBody() {
-
-    //add export button
-    window.document.body.appendChild(qDiv);
-    qDiv.appendChild(qButton)
-    // download div
-    window.document.body.appendChild(dlDiv)
-}
-
-
-// INTERFACE CREATION METHOD
-RightClickBug.CreateInterface = function () {
-    // create body
-    CreateBody()
-}
-
-
-var doSend = true;
-// run CollectData function on button click
-qButton.onclick = function () {
-    RightClickBug.ShowBug(doSend);
-};
-
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-RightClickBug.ShowBug = function (sendBool) {
-    FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
+function RightClickBug(){
+    FormItInterface.CallMethod("RightClickBug.GetArray", function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
     })
