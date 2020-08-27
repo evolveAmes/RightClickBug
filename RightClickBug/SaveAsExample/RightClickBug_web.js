@@ -10,14 +10,14 @@ loadDiv.className = "hide"
 var loadGif = document.createElement("img")
 loadGif.src = "helpers/Images/loading.gif"
 
-// create quantification div
+// create export div
 var qDiv = document.createElement("div")
-qDiv.id = "quantify"
+qDiv.id = "export"
 
-// create Quantify button
+// create export button
 var qButton = document.createElement("input");
 qButton.setAttribute("type", "button")
-qButton.value = "Quantify";
+qButton.value = "Export";
 qButton.disabled = true;
 
 // create download link div
@@ -126,7 +126,7 @@ RightClickBug.CreateInterface = function () {
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
 RightClickBug.ShowBug = async function () {
-    await FormItInterface.CallMethod("SaveAsExample.GetArray", function (result) {
+    await FormItInterface.CallMethod("RightClickBug.GetArray", function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
         loadDiv.className = "hide"
