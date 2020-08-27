@@ -20,8 +20,8 @@ RightClickBug.GetArray = function (doSend) {
     }, {
       "Header1": 4,
       "Header2": "Optional heuristic approach"
-    }]
+    }];
 
   }
-  return array
-}
+  return array;
+};

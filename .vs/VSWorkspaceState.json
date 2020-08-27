@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EvolveLab-LogiQuipTools",
-    "\\EvolveLab-LogiQuipTools\\LogiQuipQuantification",
-    "\\EvolveLab-LogiQuipTools\\LogiQuipQuantification\\v19_2"
+    "\\RightClickBug",
+    "\\RightClickBug\\RightClickBug"
   ],
-  "SelectedNode": "\\EvolveLab-LogiQuipTools\\LogiQuipQuantification\\CollectLGQGroups_web.js",
+  "SelectedNode": "\\RightClickBug\\RightClickBug\\RightClickBug_web.js",
   "PreviewInSolutionExplorer": false
 }
