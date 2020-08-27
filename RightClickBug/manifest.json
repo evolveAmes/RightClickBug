@@ -1,0 +1,12 @@
+﻿{
+  "PluginName": "Example",
+  "PluginDescription": "Bug example.",
+  "PluginType": "Panel",
+  "Scripts": [
+    "PLUGINLOCATION/SaveAsBugExample_client.js",
+    "PLUGINLOCATION/SaveAsBugExample_web.js"
+
+  ],
+  "Panel": "PLUGINLOCATION/panel.html",
+  "PanelIcon": "PLUGINLOCATION/helpers/Images/plus.png"
+}
