@@ -18,7 +18,6 @@ qDiv.id = "export"
 var qButton = document.createElement("input");
 qButton.setAttribute("type", "button")
 qButton.value = "Export";
-qButton.disabled = true;
 
 // create download link div
 var dlDiv = document.createElement("div")
