@@ -14,7 +14,7 @@ qButton.value = "Export";
 function obj2Arr(x) {
     var row = []
     row.push(x["Header1"])
-    row.push(x["Headrr2"])
+    row.push(x["Header2"])
     console.log(JSON.stringify(x))
     return row
 }
@@ -55,7 +55,6 @@ RightClickBug.ExportXls = function (exportData) {
 }
 
 function CreateBody() {
-
     //add export button
     window.document.body.appendChild(qDiv);
     qDiv.appendChild(qButton)
@@ -78,8 +77,8 @@ qButton.onclick = function () {
 
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-RightClickBug.ShowBug = async function (sendBool) {
-    await FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
+RightClickBug.ShowBug = function (sendBool) {
+    FormItInterface.CallMethod("RightClickBug.GetArray", sendBool, function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
     })
