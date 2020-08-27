@@ -1,9 +1,13 @@
-﻿if (typeof RightClickBug == "undefined") {
+﻿
+var qDiv;
+var qButton;
+if (typeof RightClickBug == "undefined") {
     RightClickBug = {};
+    qDiv = document.createElement("div");
+    qButton = document.createElement("input");
 }
 
-var qDiv = RightClickBug.createElement("div");
-var qButton = RightClickBug.createElement("input");
+
 
 function obj2Arr(x) {
     var row = [];
