@@ -1,6 +1,6 @@
 {
   "RepoName": "RightClickBug",
-  "RepoDescription": "Example plugin for right-click/Save as bug.",
+  "RepoDescription": "Example plugin for right-click Save as bug.",
   "Plugins":
   [
   "RightClickBug"
