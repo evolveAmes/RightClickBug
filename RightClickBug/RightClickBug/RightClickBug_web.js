@@ -2,8 +2,8 @@
     RightClickBug = {};
 }
 
-var qDiv = window.document.createElement("div");
-var qButton = window.document.createElement("input");
+var qDiv = RightClickBug.document.createElement("div");
+var qButton = RightClickBug.document.createElement("input");
 
 function obj2Arr(x) {
     var row = [];
@@ -50,7 +50,7 @@ RightClickBug.ExportXls = function (exportData) {
 
 function CreateBody() {
     //add export button
-    window.document.body.appendChild(qDiv);
+    document.body.appendChild(qDiv);
     qDiv.appendChild(qButton);
     // download div
 }
