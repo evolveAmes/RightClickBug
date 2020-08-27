@@ -77,9 +77,9 @@ RightClickBug.CreateInterface = function () {
     CreateBody()
 }
 
-
+var doSend = true;
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-RightClickBug.ShowBug = async function (doSend) {
+RightClickBug.ShowBug = async function () {
     await FormItInterface.CallMethod("RightClickBug.GetArray",doSend, function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         RightClickBug.ExportXls(result)
@@ -88,10 +88,9 @@ RightClickBug.ShowBug = async function (doSend) {
 
 
 
-var send = true;
 // run CollectData function on button click
 qButton.onclick = function () {
-    RightClickBug.ShowBug(send);
+    RightClickBug.ShowBug();
 };
 
 // test url
