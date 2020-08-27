@@ -2,8 +2,8 @@
     RightClickBug = {};
 }
 
-var qDiv;
-var qButton;
+var qDiv = window.document.createElement("div");
+var qButton = window.document.createElement("input");
 
 function obj2Arr(x) {
     var row = [];
@@ -60,11 +60,9 @@ function CreateBody() {
 RightClickBug.CreateInterface = function () {
 
     // create export div
-    qDiv = document.createElement("div");
     qDiv.id = "export";
 
     // create export button
-    qButton = document.createElement("input");
     qButton.setAttribute("type", "button");
     qButton.value = "Export";
 
