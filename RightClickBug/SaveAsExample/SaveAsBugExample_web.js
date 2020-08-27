@@ -125,8 +125,8 @@ SaveAsExample.CreateInterface = function () {
 
 
 // RUNS COMMAND(S) FROM _CLIENT IN FORMIT
-SaveAsExample.ShowBug = async function (catalog) {
-    await FormItInterface.CallMethod("SaveAsExample.GetArray", catalog, function (result) {
+SaveAsExample.ShowBug = async function () {
+    await FormItInterface.CallMethod("SaveAsExample.GetArray", function (result) {
         FormItInterface.ConsoleLog("Result: " + result)
         SaveAsExample.ExportXls(result)
         loadDiv.className = "hide"
@@ -139,8 +139,8 @@ SaveAsExample.ShowBug = async function (catalog) {
 // run CollectData function on button click
 qButton.onclick = function () {
     loadDiv.className = "loading"
-    SaveAsExample.ShowBug(parsedCsvCatalog);
+    SaveAsExample.ShowBug();
 };
 
 // test url
-// https://evolveames.github.io/RightClickBug
+// https://evolveames.github.io/RightClickBug/RightClickBug
