@@ -45,7 +45,7 @@ RightClickBug.ExportXls = function (exportData) {
     XLSX.writeFile(wb, fileName);
 };
 
-// INTERFACE CREATION METHOD
+// INTERFACE CREATION
 RightClickBug.CreateInterface = function () {
 
     // create export div
