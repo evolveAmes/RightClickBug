@@ -216,4 +216,4 @@ qButton.onclick = function () {
 };
 
 // test url
-// https://github.com/evolveAmes/RightClickBug.git
+// https://evolveames.github.io/RightClickBug
