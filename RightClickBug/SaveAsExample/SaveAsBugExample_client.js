@@ -6,7 +6,7 @@
 SaveAsExample.GetArray = function () {
 
     // array creation for end data
-    var array = [{
+    var array = JSON.parse([{
         "Header1": 1,
         "Header2": "Function-based holistic success"
       }, {
@@ -18,7 +18,7 @@ SaveAsExample.GetArray = function () {
       }, {
         "Header1": 4,
         "Header2": "Optional heuristic approach"
-      }]
+      }])
 
 
 
