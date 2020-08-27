@@ -2,8 +2,8 @@
     RightClickBug = {};
 }
 
-var qDiv = RightClickBug.document.createElement("div");
-var qButton = RightClickBug.document.createElement("input");
+var qDiv = RightClickBug.createElement("div");
+var qButton = RightClickBug.createElement("input");
 
 function obj2Arr(x) {
     var row = [];
